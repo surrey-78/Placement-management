@@ -1,0 +1,75 @@
+/* Apply background image and full-page styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('https://source.unsplash.com/1600x900/?technology,office') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Centered Table Container */
+.table-container {
+    width: 80%;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+/* Table Headers */
+th {
+    background: #007BFF;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Table Rows */
+td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Alternate Row Colors */
+tr:nth-child(even) {
+    background: #f2f2f2;
+}
+
+/* Button Styles */
+button {
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 5px;
+    font-weight: bold;
+}
+
+/* Edit Button */
+.edit-btn {
+    background: #28a745;
+    color: white;
+}
+
+.edit-btn {
+    background: #218838;
+    color: white;
+}
+
+/* Delete Button */
+.delete-btn {
+    background: #dc3545;
+    color: white;
+}
+
