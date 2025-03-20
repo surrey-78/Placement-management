@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { v4 as uuidv4 } from "uuid"; 
 import JobArray from "../components/JobArray";
 
 const AddJob = () => {
@@ -7,19 +8,19 @@ const AddJob = () => {
   const [companyName, setCompanyName] = useState("");
   const [category, setCategory] = useState("");
   const [domain, setDomain] = useState("");
-  const [postedDate, setPostedDate] = useState(""); // Date state
+  const [postedDate, setPostedDate] = useState(""); 
   const navigate = useNavigate();
 
   const handleAddJob = () => {
     const newJob = {
-      id: Date.now(), // Unique ID
+      id: uuidv4(), // Generate a unique ID
       companyName,
       category,
       domain,
-      postedDate, // Store user-entered date
+      postedDate, 
     };
 
-    console.log("New Job Data:", newJob); // Debugging line
+    console.log("New Job Data:", newJob); 
 
     const updatedJobs = [...jobs, newJob];
     setJobs(updatedJobs);
