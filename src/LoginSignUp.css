@@ -43,6 +43,10 @@
     color: #555;
   }
   
+  .text-primary{
+    padding-left: 90px;
+  }
+  
   /* Remember me checkbox */
   .checkbox-container {
     display: flex;

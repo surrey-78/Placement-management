@@ -67,9 +67,9 @@ const LoginComponent = () => {
           <div className="form-check">
             <label className="form-check-label" htmlFor="rememberMe">
               Remember me? <input type="checkbox" className="form-check-input" id="rememberMe" />
+              <a href="#" className="text-primary">Forgot Password?</a>
             </label>
           </div>
-          <a href="#" className="text-primary">Forgot Password?</a>
         </div>
 
         <div className="d-grid">

@@ -1,70 +1,67 @@
-/* Make the body and page full screen */
+/* General Page Styles */
 body, html {
-    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: url('https://source.unsplash.com/1600x900/?technology,office') no-repeat center center/cover;
-    height: 100vh;
-    width: 100%;
+    background: #f4f4f4; /* Light grey background */
     display: flex;
     justify-content: center;
     align-items: center;
+    min-height: 100vh;
 }
 
-/* Table container should cover more width */
-.table-container {
-    width: 95%;
-    max-width: 1200px; /* Adjust max width for larger screens */
-    background: rgba(255, 255, 255, 0.95);
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+.center-text{
     text-align: center;
 }
 
-/* Full-width table */
+/* Search Bar */
+.search-bar {
+    width: 90%;
+    padding: 10px;
+    margin-left: 10px;
+    margin-bottom: 15px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Table Styling */
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 /* Table Header */
 th {
     background: #007BFF;
     color: white;
-    padding: 15px;
-    font-size: 18px;
+    padding: 12px;
+    text-align: center;  /* Ensure consistency */
+    border: 1px solid #ddd;
 }
 
-/* Table Data */
+/* Table Rows */
 td {
-    padding: 15px;
-    font-size: 16px;
-    border-bottom: 1px solid #ddd;
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
 }
 
-/* Make buttons inline with spacing */
+/* Button Actions */
 .actions {
     display: flex;
     justify-content: center;
-    align-items: center;
-    gap: 15px; /* Adds spacing between Edit and Delete buttons */
-}
-
-/* Remove underline from links */
-.actions a {
-    text-decoration: none; /* Removes underline */
+    gap: 5px;
 }
 
 /* Buttons */
-.actions button {
-    padding: 10px 16px;
-    font-size: 16px;
+button {
+    padding: 6px 12px;
+    font-size: 14px;
     font-weight: bold;
-    border-radius: 6px;
+    border-radius: 5px;
     cursor: pointer;
-    transition: all 0.3s ease-in-out;
     border: none;
 }
 
@@ -74,106 +71,57 @@ td {
     color: white;
 }
 
-/* Delete Button */
-.delete-btn {
-    background-color: #dc3545;
-    color: white;
-}
-
-.search-bar {
-    width: 100%;
-    max-width: 600px; /* Increased width for a larger search bar */
-    padding: 12px; /* Increased padding for better appearance */
-    font-size: 18px; /* Increased font size for readability */
-    border: 2px solid #007bff; /* More visible border */
-    border-radius: 8px; /* Rounded edges */
-    outline: none;
-    transition: all 0.3s ease-in-out;
-}
-
-/* Highlight on focus */
-.search-bar:focus {
-    border-color: #0056b3;
-    box-shadow: 0px 0px 8px rgba(0, 91, 187, 0.5);
-}
-
-/* Center the form container */
-.form-container {
-    width: 100%;
-    max-width: 450px;
-    margin: 50px auto;
-    padding: 25px;
-    background: rgba(255, 255, 255, 0.95);
-    border-radius: 12px;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-/* Form title */
-.form-container h2 {
-    color: #007bff;
-    margin-bottom: 20px;
-    font-size: 24px;
-}
-
-/* Input field styling */
-.form-container input {
-    width: 90%;
-    padding: 12px;
-    margin: 10px 0;
-    border: 2px solid #ccc;
-    border-radius: 8px;
-    font-size: 16px;
-    transition: all 0.3s ease-in-out;
-}
-
-/* Input focus effect */
-.form-container input:focus {
-    border-color: #007bff;
-    box-shadow: 0px 0px 8px rgba(0, 91, 187, 0.3);
-    outline: none;
-}
-
-/* Button styling */
-.form-container button {
-    width: 100%;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 12px;
-    font-size: 18px;
-    font-weight: bold;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background 0.3s ease-in-out;
-    margin-top: 10px;
-}
-
-/* Hover effect */
-.form-container button:hover {
+.edit-btn:hover {
     background-color: #0056b3;
 }
 
-/* Responsive adjustments */
-@media (max-width: 600px) {
-    .form-container {
-        width: 90%;
-        padding: 20px;
-    }
+/* Delete Button */
+.delete-btn {
+    background-color: #dc3545; 
+    color: white;
 }
-/* Adjust responsiveness */
-@media (max-width: 768px) {
-    .table-container {
-        width: 100%;
-        padding: 15px;
-    }
 
-    .actions {
-        flex-direction: row;
+.delete-btn:hover {
+    background-color: #a71d2a;
+}
+
+/* Add New Job Button */
+.add-btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    margin-top: 15px;
+    text-align: center;
+}
+
+.add-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
     }
 
     th, td {
         font-size: 14px;
-        padding: 10px;
+        padding: 8px;
+    }
+
+    .actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    button {
+        width: 100%;
     }
 }
