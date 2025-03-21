@@ -16,20 +16,25 @@ const HomePage = () => {
   };
 
   // Filter jobs based on search term (case-insensitive)
-  const filteredJobs = jobs.filter(
+  const filteredJobs = jobs?.filter(
     (job) =>
-      job.companyName.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      job.category.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      job.domain.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+      job?.jobTitle?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      job?.companyName?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      job?.location?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      job?.jobType?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      job?.salaryRange?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      job?.category?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      job?.domain?.toLowerCase().includes(searchTerm.toLowerCase())
+  ) || [];
+  
 
-  return (  
+  return (
     <div>
       <h2 className="center-text">Job Listings</h2>
 
       <input
         type="text"
-        placeholder="Search jobs by company, category, or domain..."
+        placeholder="Search jobs by title, company, location, type, category, or domain..."
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
         className="search-bar"
@@ -38,10 +43,14 @@ const HomePage = () => {
       <table className="width-adjust">
         <thead>
           <tr>
+            <th>Job Title</th>
             <th>Company</th>
+            <th>Location</th>
+            <th>Job Type</th>
+            <th>Salary</th>
             <th>Category</th>
-            <th>Posted Date</th>
             <th>Domain</th>
+            <th>Posted Date</th>
             <th>Actions</th>
           </tr>
         </thead>
@@ -49,10 +58,14 @@ const HomePage = () => {
           {filteredJobs.length > 0 ? (
             filteredJobs.map((job) => (
               <tr key={job.id}>
+                <td>{job.jobTitle}</td>
                 <td>{job.companyName}</td>
+                <td>{job.location}</td>
+                <td>{job.jobType}</td>
+                <td>{job.salaryRange}</td>
                 <td>{job.category}</td>
-                <td>{job.postedDate}</td>
                 <td>{job.domain}</td>
+                <td>{job.JDdte}</td>
                 <td className="actions">
                   <Link to={`/edit/${job.id}`}>
                     <button className="edit-btn">Edit</button>
@@ -68,7 +81,7 @@ const HomePage = () => {
             ))
           ) : (
             <tr>
-              <td colSpan="5">No job listings found.</td>
+              <td colSpan="9">No job listings found.</td>
             </tr>
           )}
         </tbody>
